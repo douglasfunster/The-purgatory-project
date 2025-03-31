@@ -1,139 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    
-    <!-- CSS Section -->
-    <style>
-        /* Start of CSS */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-
-        header {
-            background: #333;
-            color: #fff;
-            padding: 1rem;
-        }
-
-        nav ul {
-            list-style: none;
-            padding: 0;
-            display: flex;
-            justify-content: space-around;
-        }
-
-        nav a {
-            color: #fff;
-            text-decoration: none;
-        }
-
-        section {
-            padding: 2rem;
-            margin: 1rem 0;
-        }
-
-        #home {
-            background: url('background.jpg') no-repeat center center/cover;
-            color: #fff;
-            text-align: center;
-            padding: 5rem 0;
-        }
-
-        #projects .project {
-            border: 1px solid #ddd;
-            padding: 1rem;
-            margin: 1rem 0;
-        }
-
-        form {
-            display: flex;
-            flex-direction: column;
-        }
-
-        form label {
-            margin-top: 0.5rem;
-        }
-
-        form input, form textarea {
-            padding: 0.5rem;
-            margin-top: 0.5rem;
-        }
-
-        form button {
-            margin-top: 1rem;
-            padding: 0.5rem;
-            background: #333;
-            color: #fff;
-            border: none;
-        }
-        /* End of CSS */
-    </style>
-</head>
-<body>
-    <!-- HTML Section -->
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    <section id="home">
-        <h1>Welcome to My Portfolio</h1>
-        <p>Hi, I'm [Your Name]. I'm a web developer.</p>
-    </section>
-    <section id="about">
-        <h2>About Me</h2>
-        <p>[A brief introduction about yourself]</p>
-    </section>
-    <section id="projects">
-        <h2>My Projects</h2>
-        <div class="project">
-            <h3>Project 1</h3>
-            <p>[Description of Project 1]</p>
-            <a href="#">View Project</a>
+   <head>
+         <meta charset="UTF-8">
+         <title>portfolio</title>
+         <link rel="stylesheet" type="text/css" href="design.css">
+   </head>
+    <body>
+        <div class="button-box">
+          <div class="button"> 
+            <div class="text-box">   
+              <button onclick="myFunction() "onclick="toggleLog(this)">light-mode</button> 
+            </div>            
+          </div>  
         </div>
-        <!-- Repeat for more projects -->
-    </section>
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <form id="contact-form">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" required></textarea>
-            <button type="submit">Send</button>
-        </form>
-    </section>
+          
+      
+           
 
-    <!-- JavaScript Section -->
-    <script>
-        // Start of JavaScript
-        document.getElementById('contact-form').addEventListener('submit', function(event) {
-            event.preventDefault();
-            
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
+      </body>
+    <script>function myFunction() {
+   var element = document.body;
+   element.classList.toggle("dark-mode");
+   var bWriteLog = true;
 
-            if (name && email && message) {
-                alert('Message sent successfully!');
-            } else {
-                alert('Please fill in all fields.');
-            }
-        });
-        // End of JavaScript
-    </script>
-</body>
-</html>
+function toggleLog(elt) {
+
+  bWriteLog = !bWriteLog;
+  elt.innerHTML = bWriteLog ? 'light-mode' : 'dark-mode';
+}
+}
+      </script>
+   </html>
